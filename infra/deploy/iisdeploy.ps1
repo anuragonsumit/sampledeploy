@@ -249,3 +249,5 @@ function Get-WebStatus($url) {
 }
 
 Get-WebStatus $url
+
+write-host "all done"
