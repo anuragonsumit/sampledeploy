@@ -5,14 +5,15 @@
 	[Parameter(Mandatory=$True)]
 	[string]$pass
     )
-#>
-	
+#>	
 [string]$webroot = "D:\application"
 [string]$OnesourceTaxPOOL = "application"
 [string]$OnesourceTaxSite = "application"
 rmdir $webroot -Recurse
 mkdir $webroot
 Copy-Item "C:\TeamCity\buildAgent\work\application\.build\temp\_PublishedWebsites\WebApplication\*" $webroot -Recurse
+Copy-Item "C:\TeamCity\buildAgent\work\application\.build\temp\roslyn" D:\application\bin -recurse -verbose
+
 function Start-Throttle {
     Write-Host
     Write-Host
